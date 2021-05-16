@@ -24,4 +24,8 @@ class BalancedGroupingTest {
     @Test fun MultipleUnmachedGroupingsTest() {
         assertEquals(false, groupingsProblem.isBalanced("[{a*b}/c})"))
     }
+
+    @Test fun MultipleMatchedGroupingsTest() {
+        assertEquals(true, groupingsProblem.isBalanced("{[(zy/a) * (d + f)]}"))
+    }
 }
