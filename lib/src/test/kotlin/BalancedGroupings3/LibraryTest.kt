@@ -7,8 +7,13 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class BalancedGroupingTest {
+    val groupingsProblem = BalancedGroupingsProblem()
+
     @Test fun WhitespaceTest() {
-        val classUnderTest = BalancedGroupingsProblem()
-        assertEquals(true, classUnderTest.isBalanced("   "))
+        assertEquals(true, groupingsProblem.isBalanced("   "))
+    }
+
+    @Test fun UnmatchedGroupingTest() {
+        assertEquals(false, groupingsProblem.isBalanced(" (a + b "))
     }
 }
