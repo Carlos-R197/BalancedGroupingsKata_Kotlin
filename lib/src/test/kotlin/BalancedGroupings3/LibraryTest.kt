@@ -20,4 +20,8 @@ class BalancedGroupingTest {
     @Test fun MatchedGropingTest() {
         assertEquals(true, groupingsProblem.isBalanced("[a + b]"))
     }
+
+    @Test fun MultipleUnmachedGroupingsTest() {
+        assertEquals(false, groupingsProblem.isBalanced("[{a*b}/c})"))
+    }
 }
