@@ -16,4 +16,8 @@ class BalancedGroupingTest {
     @Test fun UnmatchedGroupingTest() {
         assertEquals(false, groupingsProblem.isBalanced(" (a + b "))
     }
+
+    @Test fun MatchedGropingTest() {
+        assertEquals(true, groupingsProblem.isBalanced("[a + b]"))
+    }
 }

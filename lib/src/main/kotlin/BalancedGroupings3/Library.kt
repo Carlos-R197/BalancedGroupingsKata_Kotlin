@@ -12,11 +12,30 @@ class BalancedGroupingsProblem {
         for (c in sequence) {
             if (c == '(' || c == '[' || c == '{')
                 stack.push(c)
+            else if (c == ')' || c == ']' || c == '}') {
+                if (stack.size == 0)
+                    return false
+                else {
+                    if (!isGroupingMatched(stack.pop(), c))
+                        return false
+                }    
+            }
         }
 
         if (stack.size > 0)
             return false
         else
             return true  
+    }
+
+    private fun isGroupingMatched(a: Char, b: Char): Boolean {
+        if (a == '(' && b == ')')
+            return true
+        else if (a == '[' && b == ']')
+            return true
+        else if (a == '{' && b == '}')
+            return true
+        else 
+            return false
     }
 }
